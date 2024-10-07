@@ -42,11 +42,11 @@ functions:
     environment:
       USER_TABLE: UserDetails-${self:provider.stage}
     events:
-      - http:  
-          path: user  
-          method: put  
+      - http:
+          path: user
+          method: put
 
-  deleteUser:  
+  deleteUser:
     handler: deleteUser.handler
     environment:
       USER_TABLE: UserDetails-${self:provider.stage}
@@ -54,6 +54,7 @@ functions:
       - http:
           path: user
           method: delete
+
 resources:
   Resources:
     userTable:
