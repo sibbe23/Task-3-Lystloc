@@ -3,18 +3,18 @@ const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
 module.exports.handler = async (event) => {
   const requestBody = JSON.parse(event.body);
-  const {userId, userStatus, userEmail, userName} = requestBody;
+  const {UserId, UserStatus, UserEmail, UserName} = requestBody;
 
   const params = {
     TableName : process.env.USER_TABLE,
     Key :{
-        UserId : userId,
-        UserName : userName,
-        userEmail : userEmail,
+        UserId : UserId,
+        UserName : UserName,
+        UserEmail : UserEmail,
     },
-    UpdateExpression : 'SET userStatus = :status',
+    UpdateExpression : 'SET UserStatus = :status',
     ExpressionAttributeValues : {
-        ':status' : userStatus
+        ':status' : UserStatus
     }
   }
 
