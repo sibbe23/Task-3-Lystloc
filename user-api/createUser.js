@@ -12,7 +12,7 @@ module.exports.handler = async(event)=>{
         TableName : process.env.USER_TABLE,
         Item:{
             UserId : userId,
-            userName : userName,
+            UserName : userName,
             userEmail : userEmail,
             userStatus : 'Not yet Activated'
         }

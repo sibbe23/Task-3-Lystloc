@@ -9,7 +9,7 @@ module.exports.handler = async (event) => {
     TableName : process.env.USER_TABLE,
     Key :{
         UserId : userId,
-        userName : userName,
+        UserName : userName,
         userEmail : userEmail,
     },
     UpdateExpression : 'SET userStatus = :status',
